@@ -1,0 +1,67 @@
+########## VYPINANIE ##########
+- alias: Zona 1 - vypnut
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.temperature_PreZonu1 # Premenuj na teplotny senzor prvej zony
+    above: '22'
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.relePreZonu1 # premenuj na Rele prvej zony
+  mode: single
+  
+- alias: Zona 2 - vypnut
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.temperature_PreZonu2 # Premenuj na teplotny senzor druhej zony
+    above: '22'
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.relePreZonu2 # premenuj na Rele druhej zony
+  mode: single
+  
+- alias: Zona 3 - vypnut
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.temperature_PreZonu3 # Premenuj na teplotny senzor tretej zony
+    above: '22'
+  action:
+  - service: switch.turn_off
+    target:
+      entity_id: switch.relePreZonu3 # premenuj na Rele tretej zony
+  mode: single
+  
+########## ZAPINANIE ############
+- alias: Zona 1 - zapnut
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.temperature_PreZonu1 # Premenuj na teplotny senzor prvej zony
+    below: '22'
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.relePreZonu1 # premenuj na Rele prvej zony
+  mode: single
+  
+- alias: Zona 2 - zapnut
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.temperature_PreZonu2 # Premenuj na teplotny senzor druhej zony
+    below: '22'
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.relePreZonu2 # premenuj na Rele druhej zony
+  mode: single
+  
+- alias: Zona 3 - zapnut
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.temperature_PreZonu3 # Premenuj na teplotny senzor tretej zony
+    below: '22'
+  action:
+  - service: switch.turn_on
+    target:
+      entity_id: switch.relePreZonu3 # premenuj na Rele tretej zony
+  mode: single
